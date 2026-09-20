@@ -1,9 +1,11 @@
 from pydantic import BaseModel, Field
 from typing import Annotated, Literal
 from operator import add
+from utils import llmpick
 
 class AgentSchema(BaseModel):
     messages: Annotated[list, add] = Field(..., description="List of Message to be processed")
+    user_ques : str = Field(..., description="User question to be processed by the agent")
     curated_ques : str = Field(..., description="Curated user question")
     prompt_query_context: str = Field(..., description="Detaild prompt with SQL DB context that will help agent to generate SQL Query")
     is_safe: Literal["Yes","No"] = Field(..., description="Indicates wheather the generated SQL query is safe")

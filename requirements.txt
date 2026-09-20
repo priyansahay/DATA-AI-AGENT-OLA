@@ -3,3 +3,4 @@ langgraph
 langchain-openai
 langchain-anthropic
 pydantic
+psycopg2
