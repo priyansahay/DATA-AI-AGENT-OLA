@@ -47,4 +47,15 @@ class DatabaseUtil:
             if connection:
                 connection.close()
 
+obj = DatabaseUtil({
+    "host":"localhost",
+    "port":5432,
+    "user":"postgres",
+    "password":"Priyan@sahay2002",
+    "dbname":"postgres"
+})
+
+res =obj.schema_details("public")
+with open("test_schama.txt", "w") as f:
+    f.write(res)
 
