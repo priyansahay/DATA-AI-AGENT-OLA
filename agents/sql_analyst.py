@@ -5,7 +5,8 @@ from utils.llmpick import pick_llm
 from Models.schema import AgentSchema
 from utils.database import DatabaseUtil
 from langchain_core.messages import HumanMessage
-
+from dotenv import load_dotenv
+load_dotenv()
 # AI AGENT CODE
 
 def curate_ques(state: AgentSchema) -> AgentSchema:
@@ -18,10 +19,29 @@ def curate_ques(state: AgentSchema) -> AgentSchema:
 
 def prompt_query_context(state: AgentSchema) -> AgentSchema:
     curated_question = state.curated_ques
-    llm = pick_llm("medium")
-    response = llm.invoke(f"Generate a detailed prompt with SQL DB context for the following curated question: {curated_question}.")
-    state.prompt_query_context = response
-    return state
+    conn_details = {
+            "host": os.getenv("host"),
+            "port": os.getenv("port"),
+            "database": os.getenv("database"),
+            "user": os.getenv("user"),
+            "password": os.getenv("password")
+    }
+    obj = DatabaseUtil(conn_details)
+    schema_info = obj.schema_details("public")
+    prompt = f"""
+        You are an SQL Analyst agent. Your task is to conver the user's natural languge query into PostgresSQL query that can be executed on the database
+        You are provided with the user's original query and the schema details of the database, including table_names, column_names and sample data for each table
+        so that you can understand the structure of the database and generate an accurate SQL query. Unless user explicitly asl for specific number of rows, always
+        limit the output to 10 rows. Note - Just generate the SQL query without any explanation or additional text because this query will be executed directly
+        on the database. SO the output should be SQL ready to be executed without any modification.
 
+        User's Original Query: {curated_question}
+        Database Schema Details: {schema_info}
+        """
+    state.prompt_quer_context = prompt
+    llm = pick_llm("medium")
+    generated_sql_query = llm.invoke(prompt)
+    state.generated_sql_query = generated_sql_query
+    return state
 
 
