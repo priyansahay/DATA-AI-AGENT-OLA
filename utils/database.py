@@ -56,6 +56,6 @@ obj = DatabaseUtil({
 })
 
 res =obj.schema_details("public")
-with open("test_schama.txt", "w") as f:
+with open("test_schema.txt", "w") as f:
     f.write(res)
 

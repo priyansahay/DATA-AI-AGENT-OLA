@@ -3,6 +3,8 @@ import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),'..')))
 from utils.llmpick import pick_llm
 from Models.schema import AgentSchema
+from utils.database import DatabaseUtil
+from langchain_core.messages import HumanMessage
 
 # AI AGENT CODE
 
@@ -11,6 +13,7 @@ def curate_ques(state: AgentSchema) -> AgentSchema:
     llm = pick_llm("low")
     response = llm.invoke(f"Curate the following Question: {user_question}.")
     state.curated_ques = response
+    state.messages += [HumanMessage(content=f"{response}")] 
     return state
 
 def prompt_query_context(state: AgentSchema) -> AgentSchema:
