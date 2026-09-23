@@ -8,8 +8,9 @@ from langchain_core.messages import HumanMessage
 from dotenv import load_dotenv
 load_dotenv()
 
-llm = pick_llm("medium")
+llm = pick_llm("low")
 llm_judge = llm.with_structured_output(JudgeSchema)
+sql_query = "SELECT * FROM users where age>25;"
 prompt = """
 You are an SQL Judge for data security. Your task is to determine wheather the SQL Query is safe or not.
 The SQL query should only be used for data retrieval ans should not modify the satabase in any condition. Neither the SQL query prompt should contain any SQL commands thatcan modify the 
@@ -18,4 +19,4 @@ the structure or the contents of the database. If the SQL Query is safe, respond
 provide comments explaining your decision.
 Here is the SQL Query to be evaluated: {sql_query} """
 
-print(llm_judge.invoke(prompt))
+response =llm_judge.invoke(prompt).model_dump()
