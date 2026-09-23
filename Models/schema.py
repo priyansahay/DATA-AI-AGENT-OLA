@@ -13,3 +13,8 @@ class AgentSchema(BaseModel):
     sql_query_execution_result : str = Field(..., description="The result of executing the generated SQL Query")
     final_response : str = Field(..., description="The final response the agent based on the SQL Queryresponse")
 
+# LLM AS JUDGE
+
+class JudgeSchema(BaseModel):
+    answer: Literal["Yes","No"] = Field(..., description="Indicates wheather the generated SQL query is safe to execute or not")
+    comments: str = Field(...,description="Additional comments or feedback from the judge regarding SQL query")
