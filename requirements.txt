@@ -4,3 +4,4 @@ langchain-openai
 langchain-anthropic
 pydantic
 psycopg2-binary
+IPython

@@ -1,0 +1,113 @@
+[HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), HumanMessage(content='**Curated question:**  \nWhat types of vehicle companies are represented in our database?\n\n**Alternative, if referring to vehicle categories:**  \nWhat types of vehicles are represented in our database?', additional_kwargs={}, response_metadata={}), AIMessage(content='The vehicle companies represented are:\n\n- Ford\n- Honda\n- Hyundai\n- Nissan\n- Tesla\n- Toyota', additional_kwargs={}, response_metadata={}, tool_calls=[], invalid_tool_calls=[])]
+-----------------
+SELECT DISTINCT make
+FROM vehicles
+WHERE make IS NOT NULL
+ORDER BY make
+LIMIT 10;
+-----------------
+[('Ford',), ('Honda',), ('Hyundai',), ('Nissan',), ('Tesla',), ('Toyota',)]
+-----------------
+
+        You are an SQL Analyst agent. Your task is to conver the user's natural languge query into PostgresSQL query that can be executed on the database
+        You are provided with the user's original query and the schema details of the database, including table_names, column_names and sample data for each table
+        so that you can understand the structure of the database and generate an accurate SQL query. Unless user explicitly asl for specific number of rows, always
+        limit the output to 10 rows. Note - Just generate the SQL query without any explanation or additional text because this query will be executed directly
+        on the database. SO the output should be SQL ready to be executed without any modification.
+
+        User's Original Query: **Curated question:**  
+What types of vehicle companies are represented in our database?
+
+**Alternative, if referring to vehicle categories:**  
+What types of vehicles are represented in our database?
+        Database Schema Details: Database name public
+
+Table: payments
+  Column: payment_id, Type: integer
+  Column: ride_id, Type: integer
+  Column: user_id, Type: integer
+  Column: amount, Type: numeric
+  Column: payment_time, Type: timestamp without time zone
+  Column: payment_status, Type: character varying
+  Column: transaction_id, Type: character varying
+  Column: payment_method, Type: character varying
+ Sample Data
+   (1, 13960, 6945, Decimal('16.07'), 'credit_card', 'completed', 'TXN-00000001', datetime.datetime(2026, 4, 7, 15, 15, 52))
+   (2, 1187, 5541, Decimal('47.01'), 'debit_card', 'completed', 'TXN-00000002', datetime.datetime(2025, 10, 7, 14, 56, 33))
+   (3, 3719, 8738, Decimal('74.77'), 'paypal', 'completed', 'TXN-00000003', datetime.datetime(2026, 1, 14, 16, 19, 32))
+   (4, 15623, 5455, Decimal('66.79'), 'apple_pay', 'completed', 'TXN-00000004', datetime.datetime(2026, 3, 20, 8, 37, 33))
+   (5, 15032, 1129, Decimal('30.85'), 'paypal', 'completed', 'TXN-00000005', datetime.datetime(2026, 4, 29, 18, 56, 19))
+
+Table: ratings
+  Column: driver_id, Type: integer
+  Column: ride_id, Type: integer
+  Column: rider_id, Type: integer
+  Column: rating_id, Type: integer
+  Column: rating, Type: integer
+  Column: rated_at, Type: timestamp without time zone
+  Column: comment, Type: text
+ Sample Data
+   (1, 13870, 5833, 7667, 5, 'Could have been better', datetime.datetime(2025, 9, 9, 13, 41, 28))
+   (2, 2279, 1026, 3147, 4, 'Could have been better', datetime.datetime(2026, 6, 2, 23, 39, 31))
+   (3, 19701, 960, 2267, 5, 'Great ride', datetime.datetime(2026, 7, 23, 6, 31, 59))
+   (4, 860, 2999, 4679, 3, 'Average experience', datetime.datetime(2026, 4, 23, 4, 57, 28))
+   (5, 7868, 4277, 8698, 5, 'Average experience', datetime.datetime(2025, 10, 9, 6, 15, 35))
+
+Table: rides
+  Column: ride_id, Type: integer
+  Column: rider_id, Type: integer
+  Column: driver_id, Type: integer
+  Column: requested_at, Type: timestamp without time zone
+  Column: pickup_time, Type: timestamp without time zone
+  Column: dropoff_time, Type: timestamp without time zone
+  Column: pickup_latitude, Type: numeric
+  Column: pickup_longitude, Type: numeric
+  Column: dropoff_latitude, Type: numeric
+  Column: dropoff_longitude, Type: numeric
+  Column: distance_km, Type: numeric
+  Column: fare, Type: numeric
+  Column: surge_multiplier, Type: numeric
+  Column: status, Type: character varying
+  Column: cancellation_reason, Type: character varying
+ Sample Data
+   (1, 6166, 7514, datetime.datetime(2026, 2, 27, 20, 13, 30), None, None, Decimal('44.229291'), Decimal('-63.543162'), Decimal('44.496423'), Decimal('-67.980735'), Decimal('0.00'), Decimal('0.00'), Decimal('1.00'), 'cancelled', 'driver_cancelled')
+   (2, 5074, 4936, datetime.datetime(2025, 12, 26, 8, 26, 37), datetime.datetime(2025, 12, 26, 8, 34, 37), datetime.datetime(2025, 12, 26, 8, 59, 37), Decimal('43.881270'), Decimal('-70.083206'), Decimal('43.410488'), Decimal('-70.560855'), Decimal('13.16'), Decimal('52.17'), Decimal('1.50'), 'completed', None)
+   (3, 2969, 5849, datetime.datetime(2025, 7, 3, 7, 58, 26), datetime.datetime(2025, 7, 3, 8, 2, 26), datetime.datetime(2025, 7, 3, 9, 2, 26), Decimal('43.856247'), Decimal('-75.945737'), Decimal('44.133943'), Decimal('-70.313959'), Decimal('26.59'), Decimal('70.53'), Decimal('1.00'), 'completed', None)
+   (4, 7932, 1030, datetime.datetime(2025, 3, 1, 4, 50, 4), datetime.datetime(2025, 3, 1, 5, 3, 4), datetime.datetime(2025, 3, 1, 5, 40, 4), Decimal('44.360329'), Decimal('-64.339011'), Decimal('44.395041'), Decimal('-77.436515'), Decimal('11.35'), Decimal('42.98'), Decimal('1.20'), 'completed', None)
+   (5, 2468, 8856, datetime.datetime(2026, 7, 9, 7, 45, 41), datetime.datetime(2026, 7, 9, 7, 51, 41), datetime.datetime(2026, 7, 9, 8, 36, 41), Decimal('43.696089'), Decimal('-66.938775'), Decimal('44.669130'), Decimal('-74.876163'), Decimal('23.35'), Decimal('59.61'), Decimal('1.00'), 'completed', None)
+
+Table: vehicles
+  Column: is_active, Type: boolean
+  Column: driver_id, Type: integer
+  Column: year, Type: integer
+  Column: vehicle_id, Type: integer
+  Column: color, Type: character varying
+  Column: license_plate, Type: character varying
+  Column: make, Type: character varying
+  Column: model, Type: character varying
+ Sample Data
+   (1, 7, 'Honda', 'CR-V', 2024, 'OP331', 'Grey', True)
+   (2, 10, 'Hyundai', 'Sonata', 2026, 'WK520', 'Black', True)
+   (3, 19, 'Ford', 'Fusion', 2022, 'LI224', 'Black', True)
+   (4, 25, 'Toyota', 'RAV4', 2015, 'FN542', 'Black', True)
+   (5, 26, 'Hyundai', 'Sonata', 2016, 'CS875', 'Grey', True)
+
+Table: users
+  Column: user_id, Type: integer
+  Column: signup_date, Type: date
+  Column: is_active, Type: boolean
+  Column: email, Type: character varying
+  Column: phone, Type: character varying
+  Column: city, Type: character varying
+  Column: province, Type: character varying
+  Column: user_type, Type: character varying
+  Column: first_name, Type: character varying
+  Column: last_name, Type: character varying
+ Sample Data
+   (1, 'Danielle', 'Johnson', 'user1@example.com', '+13567729816', 'Halifax', 'NS', 'rider', datetime.date(2025, 5, 25), True)
+   (2, 'Joshua', 'Walker', 'user2@example.com', '+19222900764', 'Vancouver', 'BC', 'rider', datetime.date(2025, 5, 4), True)
+   (3, 'Jill', 'Rhodes', 'user3@example.com', '+12900432998', 'Winnipeg', 'MB', 'rider', datetime.date(2026, 5, 24), True)
+   (4, 'Patricia', 'Miller', 'user4@example.com', '+19812397600', 'Montreal', 'QC', 'rider', datetime.date(2026, 5, 21), True)
+   (5, 'Robert', 'Johnson', 'user5@example.com', '+16892737056', 'Winnipeg', 'MB', 'rider', datetime.date(2024, 4, 15), True)
+
+        
