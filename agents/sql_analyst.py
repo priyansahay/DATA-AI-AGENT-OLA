@@ -70,4 +70,7 @@ def is_safe_sql(state: AgentSchema) -> AgentSchema:
     state.is_safe_sql_response = response["answer"]
     return state
 
+# CANCELLED SQL QUERY
+def canceled_sql(state: AgentSchema) -> AgentSchema:
+    return state
 
