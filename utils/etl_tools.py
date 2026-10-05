@@ -39,7 +39,7 @@ class ETLTools:
             return f"dailed to extract data: {e}"
 
 
-    def transform_load_context(self, file_path: str):
+    def transform_load_context(self, file_path: str, output_folder: str, output_format:str):
         """ This transform the data from the specific file and loads it into tge desired location (output folder).
         Args:
             file_path(str): The Path to the file containing the data to be transformed.

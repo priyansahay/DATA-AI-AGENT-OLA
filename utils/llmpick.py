@@ -11,9 +11,9 @@ def pick_llm(level:str):
     """
     level = level.lower()
     if level == "low":
-        llm = ChatOpenAI(model_name = "gpt-5.6-luna", temperature = 0)
+        llm = ChatOpenAI(model_name = "gpt-5.6-luna", temperature = 0, model_kwargs={"reasoning_effort":"none"})
     elif level == "medium":
-        llm = ChatOpenAI(model_name = "gpt-5.6-terra", temperature = 0)
+        llm = ChatOpenAI(model_name = "gpt-5.6-terra", temperature = 0,model_kwargs={"reasoning_effort":"none"})
     elif level == "high":
         llm = ChatAnthropic(model_name = "claude-haiku-5", temperature = 0) 
     else:
