@@ -40,3 +40,7 @@ def transform_load_tool(input_file_path:str, output_folder:str, output_format:st
     pandas_code = response.strip().strip('```').strip().lstrip('python').strip()
     results= etl_tools.execute_code(pandas_code)
     return f"The data is transformed and saved at {output_folder} in {output_format} format. \n\n Pandas Code Executed: \n {pandas_code} \n\n Execution Result: \n {results}"
+
+tools=[extract_load_tool, transform_load_tool]
+llm = pick_llm("medium")
+llm_bind = llm.bind_tools(tools)
