@@ -44,3 +44,18 @@ def transform_load_tool(input_file_path:str, output_folder:str, output_format:st
 tools=[extract_load_tool, transform_load_tool]
 llm = pick_llm("medium")
 llm_bind = llm.bind_tools(tools)
+
+# AGENT GRAPH
+def llm_node(state: ETLAgentSchema):
+    messages = state.messages
+    prompt = f"""
+            You are a Python Data Analyst who has access to tools that can extract and load, 
+            transform and load data. You will be provided with a user's question 
+            and you would need to perform the right ETL operations as per the user's question. 
+            If the operation is performed then inform the user and end the coversation.
+            Here's the chat history: {messages}\n
+    """
+    final_answer = llm_bind.invoke(prompt).content
+    state.messages = messages + [final_answer]
+    return state
+
