@@ -15,11 +15,13 @@ from langchain_openai import OpenAI
 # ETL AGENT
 @tool
 def extract_load_tool(url:str, output_folder:str, format: str) -> str:
+    """Extract data from a URL and save it to the output folder in the requested format."""
     etl_tools = ETLTools()
     return etl_tools.extract_load (url, output_folder, format)
 
 @tool
 def transform_load_tool(input_file_path:str, output_folder:str, output_format:str, user_question:str) -> str:
+    """Transform a data file to answer the user's question and save it in the requested format."""
     etl_tools = ETLTools()
     top_3_rows = etl_tools.transform_load_context(input_file_path, output_folder, output_format)
     llm = pick_llm("medium")
@@ -58,4 +60,13 @@ def llm_node(state: ETLAgentSchema):
     final_answer = llm_bind.invoke(prompt).content
     state.messages = messages + [final_answer]
     return state
+
+def tool_node(state: ETLAgentSchema):
+    tools_result = []
+    tools_by_name = {tool.name: tool for tool in tools}
+
+
+if __name__ == "__main__":
+    llm_bind = pick_llm("medium").bind_tools(tools)
+    print(llm_bind.invoke("I want to extract the data from the API endpoint 'https://api.example.com/data' and save it as csv folder in '/data/output'."))
 
