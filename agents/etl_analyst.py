@@ -5,7 +5,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),'..')))
 from utils.etl_tools import ETLTools
 from Models.schema import ETLAgentSchema
 from utils.database import DatabaseUtil
-from langchain_core.messages import HumanMessage, AIMessage
+from langchain_core.messages import HumanMessage, AIMessage, ToolMessage
 from langgraph.graph import StateGraph, START, END
 from dotenv import load_dotenv
 from langchain.tools import tool
@@ -64,7 +64,13 @@ def llm_node(state: ETLAgentSchema):
 def tool_node(state: ETLAgentSchema):
     tools_result = []
     tools_by_name = {tool.name: tool for tool in tools}
-
+    tool_calls = state.messages[-1].tool_calls
+    for i in tool_calls:
+        tool = tools_by_name[i['name']]
+        observation = tool.invoke(i['args'])
+        tools_result.append(ToolMessage(content =observation, tool_call_id = i['id']))
+    state.messages = state.messages + tools_result
+    return state
 
 if __name__ == "__main__":
     llm_bind = pick_llm("medium").bind_tools(tools)
