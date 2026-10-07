@@ -72,7 +72,35 @@ def tool_node(state: ETLAgentSchema):
     state.messages = state.messages + tools_result
     return state
 
+# AGENT NODE AND EDGES
+etl_analyst_graph = StateGraph(ETLAgentSchema)
+etl_analyst_graph.add_node(llm_node, name="llm_node")
+etl_analyst_graph.add_node(tool_node, name="tool_node")
+
+etl_analyst_graph.add_edge(START, "llm_node")
+
+def is_tool_call(state:ETLAgentSchema):
+    tool_calls = state.messages[-1].tool_calls
+    if tool_calls:
+        return "tool_node"
+    else:
+        return "end"
+
+etl_analyst_graph.add_conditional_edges(
+    "llm_node", is_tool_call,{
+        "tool_node": "tool_node",
+        "end": END
+    }
+)
+etl_analyst_graph.add_edge("tool_node", "llm_node")
+
+
+
+
 if __name__ == "__main__":
-    llm_bind = pick_llm("medium").bind_tools(tools)
-    print(llm_bind.invoke("I want to extract the data from the API endpoint 'https://api.example.com/data' and save it as csv folder in '/data/output'."))
+    etl_analyst = etl_analyst_graph.compile()
+    from IPython.display import display, Image
+    img = Image(etl_analyst.get_graph().draw_mermaid_png())
+    with open("etl_analyst_graph.png", "wb") as f:
+        f.write(img.data)
 
