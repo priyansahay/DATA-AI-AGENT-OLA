@@ -1,10 +1,26 @@
 import os
+from pathlib import Path, PureWindowsPath
 import requests
 import pandas as pd
 
 class ETLTools:
     def __init__(self):
         pass
+
+    def resolve_project_path(self, path: str) -> Path:
+        project_root = Path(__file__).resolve().parent.parent
+        windows_path = PureWindowsPath(path)
+        data_index = next(
+            (index for index, part in enumerate(windows_path.parts) if part.casefold() == "data"),
+            None,
+        )
+        if data_index is not None and ("\\" in path or windows_path.is_absolute()):
+            return project_root.joinpath(*windows_path.parts[data_index:])
+
+        candidate = Path(path).expanduser()
+        if candidate.is_absolute():
+            return candidate
+        return project_root / candidate
 
     def extract_load(self,url:str, output_folder:str, format:str):
         """
@@ -15,13 +31,12 @@ class ETLTools:
         Return:
             str: A message indicating SUCCESS
         """
-        project_root = os.path.abspath(os.path.join(os.path.dirname(__file__),'..'))
-        output_folder = os.path.join(project_root, output_folder)
+        output_folder = self.resolve_project_path(output_folder)
         try:
             response = requests.get(url)
             response.raise_for_status()
             data = response.json()
-            filename = os.path.join(output_folder, f"extracted_data.{format}")
+            filename = output_folder / f"extracted_data.{format}"
             os.makedirs(output_folder, exist_ok= True)
 
             df = pd.json_normalize(data['results'])
@@ -47,7 +62,8 @@ class ETLTools:
         Return:
             str: A message indication SUCCESS or FALIURE
         """
-        file_extension = os.path.splitext(file_path)[1].lower()
+        file_path = self.resolve_project_path(file_path)
+        file_extension = file_path.suffix.lower()
         if file_extension == ".csv":
             df = pd.read_csv(file_path)
         elif file_extension == ".json":

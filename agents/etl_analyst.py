@@ -5,7 +5,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),'..')))
 from utils.etl_tools import ETLTools
 from Models.schema import ETLAgentSchema
 from utils.database import DatabaseUtil
-from langchain_core.messages import HumanMessage, AIMessage, ToolMessage
+from langchain_core.messages import HumanMessage, SystemMessage, ToolMessage
 from langgraph.graph import StateGraph, START, END
 from dotenv import load_dotenv
 from langchain.tools import tool
@@ -23,6 +23,8 @@ def extract_load_tool(url:str, output_folder:str, format: str) -> str:
 def transform_load_tool(input_file_path:str, output_folder:str, output_format:str, user_question:str) -> str:
     """Transform a data file to answer the user's question and save it in the requested format."""
     etl_tools = ETLTools()
+    input_file_path = str(etl_tools.resolve_project_path(input_file_path))
+    output_folder = str(etl_tools.resolve_project_path(output_folder))
     top_3_rows = etl_tools.transform_load_context(input_file_path, output_folder, output_format)
     llm = pick_llm("medium")
     prompt = f"""
@@ -55,11 +57,9 @@ def llm_node(state: ETLAgentSchema):
             transform and load data. You will be provided with a user's question 
             and you would need to perform the right ETL operations as per the user's question. 
             If the operation is performed then inform the user and end the coversation.
-            Here's the chat history: {messages}\n
     """
-    final_answer = llm_bind.invoke(prompt).content
-    state.messages = messages + [final_answer]
-    return state
+    assistant_message = llm_bind.invoke([SystemMessage(content=prompt), *messages])
+    return {"messages": [assistant_message]}
 
 def tool_node(state: ETLAgentSchema):
     tools_result = []
@@ -69,8 +69,7 @@ def tool_node(state: ETLAgentSchema):
         tool = tools_by_name[i['name']]
         observation = tool.invoke(i['args'])
         tools_result.append(ToolMessage(content =observation, tool_call_id = i['id']))
-    state.messages = state.messages + tools_result
-    return state
+    return {"messages": tools_result}
 
 # AGENT NODE AND EDGES
 etl_analyst_graph = StateGraph(ETLAgentSchema)
@@ -101,4 +100,17 @@ if __name__ == "__main__":
     img = Image(etl_analyst.get_graph().draw_mermaid_png())
     with open("etl_analyst_graph.png", "wb") as f:
         f.write(img.data)
+    # FOR EXTRACTING THE DATA FROM THE API ENDPOINT AND SAVING IT TO THE DESIRED LOCATION
+    """response = etl_analyst.invoke(
+        {"messages":[HumanMessage(content="I want to extract the data from the API endpoint 'https://pokeapi.co/api/v2/pokemon' and save it to data/extract folder in the csv folder")]}
+    )"""
 
+    # FOR TRANSFORMING THE DATA FROM THE FILE AND SAVING IT TO THE DESIRED LOCATION
+    response = etl_analyst.invoke(
+         {"messages":[HumanMessage(content=f"""
+            I want to transform the data stored in 'data/extract/extracted_data.csv'
+            and save the transformed data in 'data/transform' in csv format.
+            The transformation should filter the data to show bulbasaur pokemon only.
+   """)]}
+    )    
+    print(response)
