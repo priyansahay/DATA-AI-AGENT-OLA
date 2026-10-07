@@ -95,8 +95,6 @@ etl_analyst_graph.add_conditional_edges(
 etl_analyst_graph.add_edge("tool_node", "llm_node")
 
 
-
-
 if __name__ == "__main__":
     etl_analyst = etl_analyst_graph.compile()
     from IPython.display import display, Image
