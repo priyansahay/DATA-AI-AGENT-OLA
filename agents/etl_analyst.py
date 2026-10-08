@@ -23,8 +23,6 @@ def extract_load_tool(url:str, output_folder:str, format: str) -> str:
 def transform_load_tool(input_file_path:str, output_folder:str, output_format:str, user_question:str) -> str:
     """Transform a data file to answer the user's question and save it in the requested format."""
     etl_tools = ETLTools()
-    input_file_path = str(etl_tools.resolve_project_path(input_file_path))
-    output_folder = str(etl_tools.resolve_project_path(output_folder))
     top_3_rows = etl_tools.transform_load_context(input_file_path, output_folder, output_format)
     llm = pick_llm("medium")
     prompt = f"""
@@ -108,9 +106,9 @@ if __name__ == "__main__":
     # FOR TRANSFORMING THE DATA FROM THE FILE AND SAVING IT TO THE DESIRED LOCATION
     response = etl_analyst.invoke(
          {"messages":[HumanMessage(content=f"""
-            I want to transform the data stored in 'data/extract/extracted_data.csv'
-            and save the transformed data in 'data/transform' in csv format.
+            I want to transform the data stored in the 'c:\\Data_Agent\\data\\extract\\extracted_data.csv' file 
+            and save the transformed data in the 'c:\\Data_Agent\\data\\transform' folder in the csv format.
             The transformation should filter the data to show bulbasaur pokemon only.
-   """)]}
+ """)]}
     )    
     print(response)
