@@ -15,7 +15,7 @@ from langchain_openai import OpenAI
 # ETL AGENT
 @tool
 def extract_load_tool(url:str, output_folder:str, format: str) -> str:
-    """Extract data from a URL and save it to the output folder in the requested format."""
+    """Extract data from a URL and save it to output folder in the requested format."""
     etl_tools = ETLTools()
     return etl_tools.extract_load (url, output_folder, format)
 
