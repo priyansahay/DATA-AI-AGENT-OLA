@@ -78,14 +78,14 @@ data_agent_graph.add_edge("etl_node", END)
 data_agent_graph.add_edge("sql_node", END)
 
 data_agent = data_agent_graph.compile()
+from IPython.display import Image
+
+img = Image(data_agent.get_graph().draw_mermaid_png())
+with open("data_agent_graph.png", "wb") as f:
+    f.write(img.data)
 
 if __name__ == "__main__":
-    from IPython.display import Image
-
-    img = Image(data_agent.get_graph().draw_mermaid_png())
-    with open("data_agent_graph.png", "wb") as f:
-        f.write(img.data)
-
-    user_input = {"messages": [HumanMessage(content="I want to extract data from an API and save it to CSV file")]}
-    result = data_agent.invoke(user_input)
-    print(result)
+    response = data_agent.invoke(
+        {"messages":[HumanMessage(content = f"What are the different types of Vehicles company we have in our database")]}
+    )
+    print(response)
