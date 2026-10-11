@@ -145,8 +145,9 @@ sql_agent_graph.add_edge("execute_sql", "represent_final_answer")
 sql_agent_graph.add_edge("represent_final_answer", END)
 
 # COMPILE GRAPH
+sql_analyst = sql_agent_graph.compile()
+
 if __name__ == "__main__":
-    sql_analyst = sql_agent_graph.compile()
     img = Image(sql_analyst.get_graph().draw_mermaid_png())
     with open("sql_analyst_graph.png", "wb") as f:
         f.write(img.data)
