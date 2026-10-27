@@ -24,7 +24,7 @@ class ETLTools:
 
     def extract_load(self,url:str, output_folder:str, format:str):
         """
-        This tool extract the data frim API(url) and loads it into the desired location (output_folder).
+        This tool extract the data from API(url) and loads it into the desired location (output_folder).
         Args:
             url(str): The API Endpoint from which it extract data.
             output_folder (str): The folder where the extracted data will be saved.
