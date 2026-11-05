@@ -110,6 +110,6 @@ with open("data_agent_graph.png", "wb") as f:
 
 if __name__ == "__main__":
     response = data_agent.invoke(
-        {"messages":[HumanMessage(content = f"Extract the data from file data/Adobe Scan 21-Jan-2025.pdf and save it to data/extracted folder in json format.")]}
+        {"messages":[HumanMessage(content = f"Extract the data from file data/Engineering Degree.pdf and save it to data/extracted folder in csv format with key as column names.")]}
     )
     print(response)

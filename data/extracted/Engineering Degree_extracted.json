@@ -1,0 +1,10 @@
+{
+  "name": "PRIYANSHU SAHAY",
+  "degree": "Bachelor of Engineering",
+  "university_seat_number": "1MV20ETO21",
+  "subject": "Electronics & Telecommunication",
+  "class": "First Class with Distinction",
+  "month_year_of_passing": "June 2024",
+  "date": "July 18, 2024",
+  "location_of_output": "data/extracted/certificate.csv"
+}
