@@ -8,6 +8,7 @@ from langgraph.graph import StateGraph, START, END
 
 from Models.schema import DataAgentSchema, RouterSchema
 from agents.etl_analyst import etl_analyst
+from agents.pdf_analyst import pdf_analyst
 from agents.sql_analyst import sql_analyst
 from utils.llmpick import pick_llm
 
@@ -20,8 +21,28 @@ llm_router = llm.with_structured_output(RouterSchema)
 def router_node(state: DataAgentSchema):
     last_message = state.messages[-1]
     question = last_message.content if hasattr(last_message, "content") else str(last_message)
-    route_response = llm_router.invoke(question).model_dump()
+    routing_prompt = f"""
+        Route the user's request to exactly one specialist:
+        - sql: querying or analyzing data already stored in the SQL database.
+        - etl: extracting, transforming, or loading tabular/API data.
+        - pdf: reading, parsing, extracting fields or tables from, or analyzing a PDF document.
+        Choose pdf whenever the request asks to inspect or extract information from a PDF,
+        even if the requested output is structured data.
+
+        User request: {question}
+    """
+    route_response = llm_router.invoke(routing_prompt).model_dump()
     state.route_response = RouterSchema(**route_response)
+    return state
+
+
+def pdf_node(state: DataAgentSchema):
+    last_message = state.messages[-1]
+    question = last_message.content if hasattr(last_message, "content") else str(last_message)
+    response = pdf_analyst.invoke(
+        {"messages": [HumanMessage(content=question)]}
+    )
+    state.messages = state.messages + response.get("messages", [])
     return state
 
 
@@ -64,6 +85,7 @@ data_agent_graph = StateGraph(DataAgentSchema)
 data_agent_graph.add_node(router_node, name="router_node")
 data_agent_graph.add_node(etl_node, name="etl_node")
 data_agent_graph.add_node(sql_node, name="sql_node")
+data_agent_graph.add_node(pdf_node, name="pdf_node")
 
 data_agent_graph.add_edge(START, "router_node")
 data_agent_graph.add_conditional_edges(
@@ -72,10 +94,12 @@ data_agent_graph.add_conditional_edges(
     {
         "sql": "sql_node",
         "etl": "etl_node",
+        "pdf": "pdf_node",
     },
 )
 data_agent_graph.add_edge("etl_node", END)
 data_agent_graph.add_edge("sql_node", END)
+data_agent_graph.add_edge("pdf_node", END)
 
 data_agent = data_agent_graph.compile()
 from IPython.display import Image
@@ -86,6 +110,6 @@ with open("data_agent_graph.png", "wb") as f:
 
 if __name__ == "__main__":
     response = data_agent.invoke(
-        {"messages":[HumanMessage(content = f"What are the different types of Vehicles company we have in our database")]}
+        {"messages":[HumanMessage(content = f"Extract the data from file data/Adobe Scan 21-Jan-2025.pdf and save it to data/extracted folder in json format.")]}
     )
     print(response)

@@ -1,6 +1,7 @@
 langchain
 langgraph
 langchain-openai
+openai
 langchain-anthropic
 pydantic
 psycopg2-binary
