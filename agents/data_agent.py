@@ -22,7 +22,7 @@ def router_node(state: DataAgentSchema):
     last_message = state.messages[-1]
     question = last_message.content if hasattr(last_message, "content") else str(last_message)
     routing_prompt = f"""
-        Route the user's request to exactly one specialist:
+        Route the user's request to exactly required specialist:
         - sql: querying or analyzing data already stored in the SQL database.
         - etl: extracting, transforming, or loading tabular/API data.
         - pdf: reading, parsing, extracting fields or tables from, or analyzing a PDF document.
@@ -31,6 +31,7 @@ def router_node(state: DataAgentSchema):
 
         User request: {question}
     """
+    
     route_response = llm_router.invoke(routing_prompt).model_dump()
     state.route_response = RouterSchema(**route_response)
     return state
