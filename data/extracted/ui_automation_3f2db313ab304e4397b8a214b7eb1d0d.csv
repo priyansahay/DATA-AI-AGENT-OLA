@@ -1,0 +1,6 @@
+name,language,description
+MLFlow,Python,
+AIRAG,Jupyter Notebook,Project is for creating a Vector and Vector less RAG and creating a retriever pipeline that connects it to the LLM Mode.
+LLM_GATEWAY,Jupyter Notebook,
+AI_tool_for_BA,Python,
+Student_Performance,Python,

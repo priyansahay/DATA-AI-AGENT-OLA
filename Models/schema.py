@@ -30,9 +30,54 @@ class RouterSchema(BaseModel):
     )
     comments: str = Field(..., description = "Additional comments or feedback from the judge regarding the user question")
 
+
+class WorkflowStepSchema(BaseModel):
+    agent: Literal["sql", "etl", "pdf", "ui_automate"] = Field(
+        description="Specialist agent to run at this step"
+    )
+    instruction: str = Field(
+        description="Specific task for this agent, including relevant input/output requirements"
+    )
+    target_url: str | None = Field(
+        default=None,
+        description="Website URL for UI automation, if this step uses a website",
+    )
+
+
+class WorkflowPlanSchema(BaseModel):
+    steps: list[WorkflowStepSchema] = Field(
+        default_factory=list,
+        max_length=4,
+        description="Ordered list of distinct specialist agents needed for the request",
+    )
+    comments: str = Field(
+        default="",
+        description="Brief explanation of the planned workflow",
+    )
+
+
 class DataAgentSchema(BaseModel):
-    messages: Annotated[list,add] = Field(..., description = "List of messages processed by the Data Agent" )
+    messages: Annotated[list, add] = Field(
+        default_factory=list,
+        description="List of messages processed by the Data Agent",
+    )
     route_response: RouterSchema | None = Field(
         default=None,
         description="The specialist selected by the router for the user question",
+    )
+    workflow_steps: list[WorkflowStepSchema] = Field(
+        default_factory=list,
+        description="Ordered specialist workflow selected by the planner",
+    )
+    current_step: int = Field(
+        default=0,
+        description="Index of the next workflow step to execute",
+    )
+    original_question: str = Field(
+        default="",
+        description="Original user request retained throughout the workflow",
+    )
+    artifacts: Annotated[list[dict[str, str]], add] = Field(
+        default_factory=list,
+        description="Files produced by specialist agents and available to later steps",
     )

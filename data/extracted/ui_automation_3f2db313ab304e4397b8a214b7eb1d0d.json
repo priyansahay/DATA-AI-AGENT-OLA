@@ -1,0 +1,31 @@
+{
+  "summary": "Identified 5 repositories related to AI, Machine Learning, LLM, NLP, RAG, or Data Science from visible popular repositories. Details are based on their names, descriptions, and topics.",
+  "records": [
+    {
+      "name": "MLFlow",
+      "language": "Python",
+      "description": ""
+    },
+    {
+      "name": "AIRAG",
+      "language": "Jupyter Notebook",
+      "description": "Project is for creating a Vector and Vector less RAG and creating a retriever pipeline that connects it to the LLM Mode."
+    },
+    {
+      "name": "LLM_GATEWAY",
+      "language": "Jupyter Notebook",
+      "description": ""
+    },
+    {
+      "name": "AI_tool_for_BA",
+      "language": "Python",
+      "description": ""
+    },
+    {
+      "name": "Student_Performance",
+      "language": "Python",
+      "description": ""
+    }
+  ],
+  "total_count": 5
+}

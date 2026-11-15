@@ -1,0 +1,26 @@
+{
+  "summary": "Identified 5 repositories on the profile that are related to AI, Machine Learning, LLMs, NLP, RAG, or Data Science based on names and visible descriptions/topics.",
+  "records": [
+    {
+      "name": "MLFlow",
+      "evidence_category": "Repository name contains 'ML', commonly referring to Machine Learning"
+    },
+    {
+      "name": "Sales-Audiobook",
+      "evidence_category": "Jupyter Notebook (common Data Science/ML tool)"
+    },
+    {
+      "name": "AIRAG",
+      "evidence_category": "Description references 'Vector and Vector less RAG', 'retriever pipeline', 'LLM Mode' (RAG/LLM/AI/NLP keywords)"
+    },
+    {
+      "name": "LLM_GATEWAY",
+      "evidence_category": "Repository name contains 'LLM' (Large Language Model). Jupyter Notebook usage."
+    },
+    {
+      "name": "AI_tool_for_BA",
+      "evidence_category": "Repository name contains 'AI' (Artificial Intelligence)"
+    }
+  ],
+  "total_count": 5
+}

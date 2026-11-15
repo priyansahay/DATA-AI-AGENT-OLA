@@ -1,0 +1,6 @@
+name,evidence_category
+MLFlow,"Repository name contains 'ML', commonly referring to Machine Learning"
+Sales-Audiobook,Jupyter Notebook (common Data Science/ML tool)
+AIRAG,"Description references 'Vector and Vector less RAG', 'retriever pipeline', 'LLM Mode' (RAG/LLM/AI/NLP keywords)"
+LLM_GATEWAY,Repository name contains 'LLM' (Large Language Model). Jupyter Notebook usage.
+AI_tool_for_BA,Repository name contains 'AI' (Artificial Intelligence)
