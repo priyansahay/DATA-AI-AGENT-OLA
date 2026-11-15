@@ -26,7 +26,7 @@ FALLBACK_MODELS = [
 ]
 
 # 2. Define the target URL
-TARGET_URL = "https://github.com/priyansahay"
+TARGET_URL = "https://www.udemy.com/"
 
 
 def denorm_x(x: int) -> int:
@@ -163,11 +163,11 @@ def run_form_automation():
 
         # Initial prompt + compressed JPEG screenshot
         prompt = (
-            "You are on a GitHub profile page.\n"
-            "1. Click on the 'Repositories' tab to view all repositories in the profile.\n"
-            "2. Scroll through the repositories list if needed to inspect all of them.\n"
-            "3. Identify all AI, Machine Learning, LLM, NLP, RAG, or Data Science related repositories.\n"
-            "4. Once you have seen the repositories, respond with the complete list of AI-related "
+            "You are on a Udemy course page.\n"
+            "1. Click on the 'Curriculum' tab to view all course modules.\n"
+            "2. Scroll through the modules if needed to inspect all of them.\n"
+            "3. Identify all AI, Machine Learning, LLM, NLP, RAG, or Data Science related courses.\n"
+            "4. Once you have seen the courses, respond with the complete list of AI-related "
             "projects and the total count of AI-related projects."
         )
         screenshot = page.screenshot(type="jpeg", quality=80)
